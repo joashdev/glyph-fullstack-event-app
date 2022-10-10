@@ -1,5 +1,13 @@
-import { createApp } from 'vue'
-import './style.css'
-import App from './App.vue'
+import { createApp, provide } from 'vue';
+import './style.css';
+import 'v-calendar/dist/style.css';
+import { events, users, event, user } from './store/store.js';
 
-createApp(App).mount('#app')
+import App from './App.vue';
+
+createApp(App)
+  .provide('events', events)
+  .provide('users', users)
+  .provide('event', event)
+  .provide('user', user)
+  .mount('#app');
